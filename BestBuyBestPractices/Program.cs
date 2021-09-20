@@ -20,6 +20,11 @@ namespace BestBuyBestPractices
 
             var repo = new DapperDepartmentRepository(conn);
 
+            Console.WriteLine("Enter a new Department name: ");
+            var newDept = Console.ReadLine();
+
+            repo.InsertDepartment(newDept);
+
             var departments = repo.GetAllDepartments();
 
             foreach(var dept in departments)
